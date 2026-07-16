@@ -1,0 +1,6 @@
+{
+  "name": "Luxe Studio",
+  "description": "A premium design collaboration platform engineered for creative professionals. Combines instant design generation, canvas collaboration, and brand kit management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_API"]
+}

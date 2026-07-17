@@ -194,10 +194,14 @@ export default function LandingPage({ onStartTrial }: LandingPageProps) {
                 scrollStart="center bottom+=50%"
                 scrollEnd="bottom bottom-=40%"
                 stagger={0.025}
-                containerClassName="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase tracking-[0.35em] text-[#C5A059] mb-0"
+                containerClassName="text-xl sm:text-2xl font-semibold uppercase tracking-[0.35em] text-[#C5A059] mb-0"
                 textClassName="text-[#C5A059]"
               >
-                Design Better with AI
+                <>
+                  <span>Design Better</span>
+                  <br />
+                  <span>With AI</span>
+                </>
               </ScrollFloat>
             </motion.div>
 

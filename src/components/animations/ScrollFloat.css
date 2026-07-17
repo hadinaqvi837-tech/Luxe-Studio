@@ -16,5 +16,7 @@
 
 .no-split {
   display: inline-block;
-  white-space: nowrap;
+  /* respect explicit line breaks while preventing automatic word breaks */
+  white-space: pre-line;
+  word-break: keep-all;
 }

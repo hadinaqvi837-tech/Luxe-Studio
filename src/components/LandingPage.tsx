@@ -144,7 +144,7 @@ export default function LandingPage({ onStartTrial }: LandingPageProps) {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="w-8 h-8 rounded-sm bg-gradient-to-tr from-[#C5A059] to-[#8E6F3E] flex items-center justify-center text-[#0A0A0A] font-bold text-lg tracking-widest font-mono">L</span>
-            <span className="font-mono text-xl tracking-wider font-semibold text-[#E4E4E4]">LUXE<span className="text-[#C5A059]">.</span>STUDIO</span>
+            <span className="font-sans text-xl sm:text-2xl font-semibold tracking-tight leading-[1.1] bg-gradient-to-b from-white to-[#A0A0A0] bg-clip-text text-transparent">LUXE<span className="text-[#C5A059]">.</span>STUDIO</span>
           </div>
           
           <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-[#A0A0A0] tracking-wide">

@@ -172,15 +172,6 @@ export default function LandingPage({ onStartTrial }: LandingPageProps) {
           
           {/* Hero Content */}
           <div className="lg:col-span-6 flex flex-col items-start text-left z-10">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3 py-1 bg-[#2D5A47]/20 border border-[#2D5A47]/30 rounded-full text-xs font-semibold text-emerald-400 mb-6"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
-              <span>Next-Gen Full-Stack AI Design Platform</span>
-            </motion.div>
             
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}

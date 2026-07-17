@@ -26,7 +26,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import ScrollFloat from './animations/ScrollFloat';
 import VariableProximity from './animations/VariableProximity';
 import MagicRings from './animations/MagicRings';
-import LiquidEther from './animations/LiquidEther';
 
 interface LandingPageProps {
   onStartTrial: () => void;
@@ -173,17 +172,11 @@ export default function LandingPage({ onStartTrial }: LandingPageProps) {
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-24 overflow-hidden border-b border-[#2A2A2A]">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <LiquidEther
-            colors={['#C5A059', '#2D5A47', '#7C3AED']}
-            mouseForce={18}
-            cursorSize={90}
-            resolution={0.55}
-            autoDemo={true}
-            autoSpeed={0.35}
-            autoIntensity={1.7}
-            className="h-full w-full"
-          />
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(197,160,89,0.16),transparent_28%),radial-gradient(circle_at_80%_30%,rgba(45,90,71,0.18),transparent_32%),linear-gradient(135deg,#0A0A0A_0%,#111111_55%,#0A0A0A_100%)]" />
+          <div className="hero-orb hero-orb-1" />
+          <div className="hero-orb hero-orb-2" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:80px_80px] opacity-20" />
         </div>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           

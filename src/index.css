@@ -6,3 +6,37 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
+@keyframes drift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(20px, -25px, 0) scale(1.08);
+  }
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.55;
+  animation: drift 10s ease-in-out infinite;
+}
+
+.hero-orb-1 {
+  width: 18rem;
+  height: 18rem;
+  top: 8%;
+  left: 8%;
+  background: rgba(197, 160, 89, 0.24);
+}
+
+.hero-orb-2 {
+  width: 20rem;
+  height: 20rem;
+  bottom: -6%;
+  right: 8%;
+  background: rgba(45, 90, 71, 0.24);
+  animation-delay: -4s;
+}
+

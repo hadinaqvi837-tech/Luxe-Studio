@@ -30,21 +30,26 @@ export default function ScrollFloat({
 }: ScrollFloatProps) {
   const containerRef = useRef<HTMLHeadingElement | null>(null);
 
+  const isString = typeof children === 'string';
+
   const splitText = useMemo(() => {
-    const text = typeof children === 'string' ? children : '';
+    if (!isString) return null;
+    const text = children as string;
     return text.split('').map((char, index) => (
       <span className="char" key={index}>
         {char === ' ' ? '\u00A0' : char}
       </span>
     ));
-  }, [children]);
+  }, [children, isString]);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
 
     const scroller = scrollContainerRef?.current ?? window;
-    const charElements = el.querySelectorAll<HTMLElement>('.char');
+    const charElements = isString
+      ? el.querySelectorAll<HTMLElement>('.char')
+      : el.querySelectorAll<HTMLElement>('.no-split');
 
     const animation = gsap.fromTo(
       charElements,
@@ -82,7 +87,11 @@ export default function ScrollFloat({
 
   return (
     <h2 ref={containerRef} className={`scroll-float ${containerClassName}`}>
-      <span className={`scroll-float-text ${textClassName}`}>{splitText}</span>
+      {isString ? (
+        <span className={`scroll-float-text ${textClassName}`}>{splitText}</span>
+      ) : (
+        <span className={`scroll-float-text no-split ${textClassName}`}>{children}</span>
+      )}
     </h2>
   );
 }

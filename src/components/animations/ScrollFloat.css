@@ -13,3 +13,8 @@
 .char {
   display: inline-block;
 }
+
+.no-split {
+  display: inline-block;
+  white-space: nowrap;
+}

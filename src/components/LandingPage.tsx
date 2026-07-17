@@ -186,7 +186,7 @@ export default function LandingPage({ onStartTrial }: LandingPageProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="mb-4"
+              className="mb-4 overflow-hidden"
             >
               <ScrollFloat
                 animationDuration={1.2}
@@ -194,7 +194,7 @@ export default function LandingPage({ onStartTrial }: LandingPageProps) {
                 scrollStart="center bottom+=50%"
                 scrollEnd="bottom bottom-=40%"
                 stagger={0.025}
-                containerClassName="text-xl sm:text-2xl font-semibold uppercase tracking-[0.35em] text-[#C5A059] mb-0"
+                containerClassName="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase tracking-[0.35em] text-[#C5A059] mb-0"
                 textClassName="text-[#C5A059]"
               >
                 Design Better with AI

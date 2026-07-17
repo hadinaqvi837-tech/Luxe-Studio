@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useRef, useState } from 'react';
 import { 
   Sparkles, 
   Users, 
@@ -23,12 +23,17 @@ import {
   Star
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import ScrollFloat from './animations/ScrollFloat';
+import VariableProximity from './animations/VariableProximity';
+import MagicRings from './animations/MagicRings';
+import LiquidEther from './animations/LiquidEther';
 
 interface LandingPageProps {
   onStartTrial: () => void;
 }
 
 export default function LandingPage({ onStartTrial }: LandingPageProps) {
+  const heroRef = useRef<HTMLDivElement | null>(null);
   const [isAnnual, setIsAnnual] = useState(true);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showDemoModal, setShowDemoModal] = useState(false);
@@ -168,10 +173,57 @@ export default function LandingPage({ onStartTrial }: LandingPageProps) {
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-24 overflow-hidden border-b border-[#2A2A2A]">
+        <div className="absolute inset-0 z-0 opacity-40">
+          <LiquidEther
+            colors={['#C5A059', '#2D5A47', '#7C3AED']}
+            mouseForce={18}
+            cursorSize={90}
+            resolution={0.55}
+            autoDemo={true}
+            autoSpeed={0.35}
+            autoIntensity={1.7}
+            className="h-full w-full"
+          />
+        </div>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Hero Content */}
-          <div className="lg:col-span-6 flex flex-col items-start text-left z-10">
+          <div ref={heroRef} className="lg:col-span-6 flex flex-col items-start text-left z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              className="mb-4"
+            >
+              <ScrollFloat
+                animationDuration={1.2}
+                ease="back.inOut(2)"
+                scrollStart="center bottom+=50%"
+                scrollEnd="bottom bottom-=40%"
+                stagger={0.025}
+                containerClassName="text-xl sm:text-2xl font-semibold uppercase tracking-[0.35em] text-[#C5A059] mb-0"
+                textClassName="text-[#C5A059]"
+              >
+                Design Better with AI
+              </ScrollFloat>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-5 text-xs sm:text-sm uppercase tracking-[0.35em] text-[#8F8F8F]"
+            >
+              <VariableProximity
+                label="Crafted for modern creative teams"
+                className="text-[#A0A0A0]"
+                containerRef={heroRef}
+                radius={140}
+                falloff="linear"
+                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                toFontVariationSettings="'wght' 700, 'opsz' 28"
+              />
+            </motion.div>
             
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -235,6 +287,24 @@ export default function LandingPage({ onStartTrial }: LandingPageProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative bg-[#161616] rounded-xl shadow-2xl p-4 border border-[#2A2A2A] aspect-video flex flex-col overflow-hidden"
             >
+              <div className="absolute inset-0 z-0 rounded-xl overflow-hidden opacity-70">
+                <MagicRings
+                  color="#C5A059"
+                  colorTwo="#2D5A47"
+                  ringCount={7}
+                  speed={0.8}
+                  attenuation={10}
+                  lineThickness={1.6}
+                  baseRadius={0.32}
+                  radiusStep={0.1}
+                  scaleRate={0.08}
+                  opacity={0.35}
+                  followMouse={true}
+                  hoverScale={1.08}
+                  parallax={0.05}
+                  clickBurst={false}
+                />
+              </div>
               <div className="flex items-center justify-between border-b border-[#2A2A2A] pb-3 mb-3">
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1.5">
